@@ -18,7 +18,7 @@ public partial class _Default : System.Web.UI.Page
     protected void ButtonGetAnEmployee_Click(object sender, EventArgs e)
     {
         string ResponseStr = "";
-        string uri = "http://localhost:8038/EmployeeService/";
+        string uri = "http://localhost:8038/EmployeeService/GetAnEmployee/";
         string id = "3550"; //parametreden alinabilir
         try
         {

@@ -14,12 +14,12 @@ namespace RestfulTest
     {
         //GET Operation
         [OperationContract]
-        [WebGet(UriTemplate = "")]
+        [WebGet(UriTemplate = "GetAllEmployee")]
         List<Employee> GetAllEmployee();
 
         //GET Operation
         [OperationContract]
-        [WebGet(UriTemplate = "{empCode}")]
+        [WebGet(UriTemplate = "GetAnEmployee/{empCode}")]
         Employee GetAnEmployee(string empCode);
 
         //POST operation
