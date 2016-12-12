@@ -24,6 +24,13 @@ namespace RestfulTest
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            {
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type");
+                HttpContext.Current.Response.End();
+            }
 
         }
 

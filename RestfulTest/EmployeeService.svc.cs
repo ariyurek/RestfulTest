@@ -39,5 +39,28 @@ namespace RestfulTest
                 throw ex;
             }
         }
+
+        //GET Operation 
+        public Employee GetAnEmployee(string empCode)
+        {
+            EmployeeEntity ent = EmployeeOperation.GetAnEmployee(Convert.ToInt32(empCode));
+            Employee emp = new Employee();
+            emp.FirstName = ent.FirstName;
+            emp.LastName = ent.LastName;
+            emp.EmpCode = ent.EmpCode;
+            emp.Designation = ent.Designation;
+
+            return emp;
+        }
+
+        public string AddEmployee(Employee emp)
+        {
+            EmployeeEntity ent = new EmployeeEntity();
+            ent.FirstName = emp.FirstName;
+            ent.LastName = emp.LastName;
+            ent.EmpCode = emp.EmpCode;
+            ent.Designation = emp.Designation;
+            return EmployeeOperation.AddEmployee(ent);
+        }
     }
 }

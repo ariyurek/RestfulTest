@@ -16,5 +16,18 @@ namespace RestfulTest
         [OperationContract]
         [WebGet(UriTemplate = "")]
         List<Employee> GetAllEmployee();
+
+        //GET Operation
+        [OperationContract]
+        [WebGet(UriTemplate = "{empCode}")]
+        Employee GetAnEmployee(string empCode);
+
+        //POST operation
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json,
+                   UriTemplate = "AddEmployee")]
+        string AddEmployee(Employee emp);
     }
 }
