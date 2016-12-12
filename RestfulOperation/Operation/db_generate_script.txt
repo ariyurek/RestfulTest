@@ -110,7 +110,16 @@ ALTER DATABASE [Company] SET  READ_WRITE
 GO
 
 
+ USE [master]
+GO
+
  
+CREATE LOGIN [restfultest] WITH PASSWORD=N'restfultest', DEFAULT_DATABASE=[Company], DEFAULT_LANGUAGE=[Türkçe], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+
+ 
+
+
 
 USE [Company]
 GO
