@@ -132,7 +132,7 @@ namespace RestfulOperation.Operation
         }
 
 
-        public static string DeleteEmployee(int empCode)
+        public static string DeleteEmployee(string empCode)
         {
             try
             {
@@ -147,7 +147,7 @@ namespace RestfulOperation.Operation
                 command.Connection.Open();
                 command.CommandText = sqlDeleteString;
 
-                SqlParameter IDparam = new SqlParameter("@empCode", empCode);
+                SqlParameter IDparam = new SqlParameter("@empCode", Convert.ToInt32(empCode));
                 command.Parameters.Add(IDparam);
                 command.ExecuteNonQuery();
                 command.Connection.Close();

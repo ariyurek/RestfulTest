@@ -62,5 +62,20 @@ namespace RestfulTest
             ent.Designation = emp.Designation;
             return EmployeeOperation.AddEmployee(ent);
         }
+
+        public string DeleteEmployee(string empCode)
+        { 
+            return EmployeeOperation.DeleteEmployee(empCode);
+        }
+
+        public string UpdateEmployee(Employee emp)
+        {
+            EmployeeEntity ent = new EmployeeEntity();
+            ent.FirstName = emp.FirstName;
+            ent.LastName = emp.LastName;
+            ent.EmpCode = emp.EmpCode;
+            ent.Designation = emp.Designation;
+            return EmployeeOperation.UpdateEmployee(ent);
+        }
     }
 }

@@ -29,5 +29,19 @@ namespace RestfulTest
                    ResponseFormat = WebMessageFormat.Json,
                    UriTemplate = "AddEmployee")]
         string AddEmployee(Employee emp);
+
+        //PUT Operation 
+        [OperationContract]
+        [WebInvoke(UriTemplate = "UpdateEmployee", 
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json, Method = "PUT")]
+        string UpdateEmployee(Employee emp);
+
+        //DELETE Operation 
+        [OperationContract]
+        [WebInvoke(UriTemplate = "DeleteEmployee/{empCode}",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json, Method = "DELETE")]
+        string DeleteEmployee(string empCode);
     }
 }
